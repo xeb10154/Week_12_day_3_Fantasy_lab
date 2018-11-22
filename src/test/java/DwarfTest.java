@@ -1,3 +1,4 @@
+import Players.Dwarf;
 import Players.Fighter;
 import Tools.Axe;
 import Tools.IWeapon;
@@ -7,9 +8,9 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-public class FighterTest {
+public class DwarfTest {
 
-    Fighter fighter;
+    Dwarf dwarf;
     IWeapon sword;
     Axe axe;
 
@@ -18,29 +19,34 @@ public class FighterTest {
     public void setUp() throws Exception {
         sword = new Sword();
         axe = new Axe();
-        fighter = new Fighter("Raymond", sword, 100);
+        dwarf= new Dwarf("Raymond",100, sword);
     }
 
     @Test
     public void checkHealthValue() {
-        assertEquals(100, fighter.getHealthValue());
+        assertEquals(100, dwarf.getHealthValue());
     }
 
     @Test
     public void testChangeHealth() {
-        fighter.changeHealth(10);
-        assertEquals(110, fighter.getHealthValue());
+        dwarf.changeHealth(10);
+        assertEquals(110, dwarf.getHealthValue());
     }
 
     @Test
     public void showWeapon() {
-        assertEquals(sword, fighter.showWeapon());
+        assertEquals(sword, dwarf.showWeapon());
     }
 
     @Test
     public void setWeapon(){
-        fighter.setWeapon(axe);
-        assertEquals(axe, fighter.showWeapon());
+        dwarf.setWeapon(axe);
+        assertEquals(axe, dwarf.showWeapon());
+    }
+
+    @Test
+    public void needToLoseWeight(){
+        assertEquals("I need to lose weight.", dwarf.needToLoseWeight());
     }
 
 

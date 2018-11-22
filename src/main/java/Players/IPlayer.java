@@ -1,6 +1,8 @@
 package Players;
 
+import Rooms.IChallenge;
+
 public interface IPlayer {
 
-    void interact(IPlayer player);
+    void collectPoints(IChallenge room);
 }

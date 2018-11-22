@@ -3,16 +3,14 @@ package Players;
 import Tools.Axe;
 import Tools.IWeapon;
 
-public class Fighter {
+public abstract class Fighter implements IPlayer{
 
     private String name;
-    protected IWeapon weapon;
     protected int healthValue;
     protected int points = 0;
 
-    public Fighter(String name, IWeapon weapon, int healthValue) {
+    public Fighter(String name, int healthValue) {
         this.name = name;
-        this.weapon = weapon;
         this.healthValue = healthValue;
         this.points = points;
     }
@@ -27,11 +25,7 @@ public class Fighter {
         this.healthValue += value;
     }
 
-    public void setWeapon(IWeapon weapon) {
-        this.weapon = weapon;
-    }
 
-    public IWeapon showWeapon() {
-        return this.weapon;
-    }
+
+
 }
